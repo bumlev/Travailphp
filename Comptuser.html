@@ -1,0 +1,188 @@
+<!Doctype html>
+<html lang="en">
+<head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width", initial-scale="2">
+  <title class="after">Create Account </title>
+  <!--Bootstrap css-->
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"  />
+  
+   <link rel="stylesheet" type="text/css" href="css/style.css"/>
+   
+</head>
+<body>
+<div class="row">
+	<header>
+		 <div class="row">
+
+     <div class="center">
+       <h2>Create An Account </h2>
+     </div>
+
+    </div>
+    </header>
+
+    <div class="row">
+     <form  action="objet.php" method="post">
+    	    <div class="col-md-6" >
+    		
+
+                       <div class="form-group">
+                          <label name="identity">No y'irangamuntu:</label>
+                             <input type="text" id="irangamuntu" name="id" class="form-control">
+                       </div>
+
+                       <div class="form-group">
+                          <label name="amazina">Amazina:</label>
+                          <script type="text/javascript">
+
+                             function surligne(champ, erreur)
+                               {
+                                 if(erreur)
+                                champ.style.backgroundColor = "red";
+                                 else
+                                champ.style.backgroundColor = "";
+                               }
+
+                               // verifname
+                               function verifname(champ)
+                                {
+                                  var d=document.getElementById('idname');
+                                 if(!champ.name.value)
+                                   {
+                                        surligne(champ, true);
+                                        //document.write('remlir votre nom');
+                                        return false;
+                                   }
+                                 else
+                                  {
+                                       surligne(champ, false);
+                                       return true;
+                                  }
+                                }
+                                function verifForm(f)
+                                 {
+                                     var nameOk = verifname(f.name);
+                                     if(nameOk)
+                                        return true;
+                                     else
+                                     {
+                                        //alert("Veuillez remplir correctement tous les champs");
+                                        return false;
+                                     }
+                                 }
+                          </script>
+                             <input  type="text" id="idname" name="name"  class="form-control" required="required" >
+                              <h6 style="color:red">*Required field</h6>
+                       </div>
+                       <div class="form-group">
+                          <label name="igitsina">Igitsina:</label>
+                             <select class="form-control" name="sex" required="required">
+                               <option selected="selected"> </option>
+                               <option >Gabo</option>
+                               <option>Gore</option>
+                             </select>
+                            <h6 style="color:red">*Required field</h6>
+                       </div>
+                       <div class="form-group">
+                          <label name="irangamirere">Irangamirere:</label>
+                             <input type="text" id="irangamirere" name="nationality" class="form-control" required="required" >
+                              <h6 style="color:red">*Required field</h6>
+                       </div>
+                       <div class="form-group">
+                          <label name="se">Se:</label>
+                             <input type="text" id="pere" name="se" class="form-control">
+                       </div>
+                       <div class="form-group">
+                          <label name="nyina">Nyina:</label>
+                             <input type="text" id="mere" name="nyina" class="form-control">
+                       </div>
+                       <div class="form-group">
+                          <label name="ivuka">Igihe yavukiye:</label>
+                             <input  id="kuvuka" type="date" name="datebirth" class="form-control" required="required">
+                             <h6 style="color:red">*Required field</h6>
+                       </div>
+                       <div class="form-group">
+                          <label name="yakirijwe">Igihe yakirijwe:</label>
+                             <input id="gukizwa" type="date" name="datebornagain" class="form-control" >
+                       </div>
+                       <div class="form-group">
+                          <label name="bapteme">Igihe yabatirijwe:</label>
+                             <input id="kubatizwa" type="date" name="datebaptiz" class="form-control" >
+                       </div>
+                        <div class="form-group">
+                          <label name="akazi">Icyo ukora:</label>
+                             <input type="text" id="akazi" name="akazi" class="form-control" >
+                       </div>
+                       <div class="form-group">
+                          <label name="membre">Umunyetorero kuva:</label>
+                             <input id="membre" type="date" name="membre" class="form-control" >
+                       </div>
+
+                       
+                       
+                  
+    	</div>
+    	<div class="col-md-6">
+
+                       <div class="form-group">
+                          <label name="ishuri">Amashuri yize:</label>
+                             <input type="text" id="ishuri" name="ishuri" class="form-control">
+                       </div>
+
+                       <div class="form-group">
+                          <label name="Ishami">Ishami yize:</label>
+                             <input type="text" id="subject" name="subject" class="form-control" >
+                       </div>
+                        <div class="form-group">
+                          <label name="impano">Impanokaremano:</label>
+                             <input type="text" id="impano" name="impano" class="form-control" >
+                       </div>
+                        <div class="form-group">
+                          <label name="mobile">TEL.MOBILE:</label>
+                             <input type="text" id="mobile" name="mobile" class="form-control" >
+                       </div>
+                        <div class="form-group">
+                          <label name="mail">Email:</label>
+                             <input type="text" id="mail" name="mail" class="form-control" >
+                       </div>
+                        <div class="form-group">
+                          <label name="akarere">Akarere:</label>
+                             <input type="text" id="subject" name="subject" class="form-control" required="required">
+                             <h6 style="color:red">*Required field</h6>
+                       </div>
+                        <div class="form-group">
+                          <label name="umurenge">Umurenge</label>
+                             <input type="text" id="umurenge" name="umurenge" class="form-control" required="required">
+                            <h6 style="color:red">*Required field</h6>
+                       </div>
+                        <div class="form-group">
+                          <label name="akagari">Akagari:</label>
+                             <input type="text" id="akagari" name="akagari" class="form-control" required="required">
+                            <h6 style="color:red">*Required field</h6>
+                       </div>
+                        <div class="form-group">
+                          <label name="umudugudu">umudugudu:</label>
+                             <input type="text" id="umudugudu" name="umudugudu" class="form-control" required="required">
+                          <h6 style="color:red">*Required field</h6>
+                       </div>
+                        <div class="form-group">
+                          <label name="umurimo">Umurimo mwitorero</label>
+                             <input type="text" id="subject" name="subject" class="form-control" >
+                       </div>
+
+                       <div class="form-group">
+                          <label name="message">Message:</label>
+   <textarea id="message" name="message" class="form-control"> type your message here...</textarea>
+
+                        </div>
+                               <input type="submit"  value="Save" name="save" class="btn btn-success"> 
+                                 
+
+    	</div>
+  </form>
+    </div>
+</div>
+</body>
+</html>

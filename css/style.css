@@ -1,0 +1,28 @@
+
+h2{
+	
+	text-align:center;
+    font-family: Impact, "Arial Black", Arial, Verdana, sans-serif;
+
+}
+
+
+input
+{
+	width: 200px;
+}
+.form-control
+{
+	width:390px;
+}
+
+.col-md-6
+{
+
+	padding-left: 90px;
+	padding-top: 90px;
+
+}
+
+
+

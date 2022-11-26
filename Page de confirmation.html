@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width", initial-scale="2">
+      <title>Liste des Membres</title>
+       <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+      <link rel="stylesheet"  type="text/css" href="form.css">
+      <link rel="icon" href="favicon.ico" />
+      <link rel="icon" type="image/png" href="logo_400x400.png" />
+</head>
+<body class="bo">
+<div  class="container">
+<div class="row ">
+<div class="col-md-3 searc">
+  <label name="igitsina">Choix</label>
+    <div class="form-group">
+         <?php
+
+    include_once 'Membremanager.class.php';
+  //  connexion a la  base de donnees 
+
+         try 
+         {
+
+          $pdo_options[PDO::ATTR_ERRMODE] = PDO::ERRMODE_EXCEPTION;
+          $bd= new PDO('mysql:host=localhost;dbname=blog', 'root', '',
+            $pdo_options);
+         } 
+         catch (Exception $e) 
+         {
+          die('Erreur: '. $e->getMessage());
+         }
+
+        $mb=new Membremanager($bd);
+
+         $mb->affichnumb();  
+            ?>               
+     </div>
+
+
+
+
+
+
+
+
+
+
+  
+
+      
+ </div>
+</div>
+<div class="row">
+
+<?php
+
+    include_once 'Membremanager.class.php';
+  //  connexion a la  base de donnees 
+
+         try 
+         {
+
+         	$pdo_options[PDO::ATTR_ERRMODE] = PDO::ERRMODE_EXCEPTION;
+         	$bd= new PDO('mysql:host=localhost;dbname=blog', 'root', '',
+            $pdo_options);
+         } 
+         catch (Exception $e) 
+         {
+         	die('Erreur: '. $e->getMessage());
+         }
+
+        $mb=new Membremanager($bd);
+
+    /////////////////////////// instancier un membre et initiaiser ses donnees ////////////////////////////////////////////////////      
+         include_once('Membre.class.php');
+         $membre = new Membre();
+
+         if (isset($_POST['id']) And isset($_POST['save'])) 
+           $membre->setId($_POST['id'],$mb);
+
+         if (isset($_POST['id']) And isset($_POST['update'])) 
+           $membre->setIdmodif($_POST['telnum'],$mb, $_POST['id']);
+
+         if (isset($_POST['name'])) 
+          $membre->setName($_POST['name']);
+
+        if (isset($_POST['sex'])) 
+          $membre->setSex($_POST['sex']);
+
+        if (isset($_POST['nationality'])) 
+          $membre->setNationality($_POST['nationality']);
+
+        if (isset($_POST['se'])) 
+          $membre->setSe($_POST['se']);
+
+        if (isset($_POST['nyina'])) 
+          $membre->setNyina($_POST['nyina']);
+
+        if (isset($_POST['datebirth'])) 
+          $membre->setDatebirth($_POST['datebirth']);
+        
+        if (isset($_POST['datebornagain'])) 
+          $membre->setDatebornagain($_POST['datebornagain']);
+
+          /////////// ajout d'un membre/////////////////////////////////////////////////////////////////////
+         if (isset($_POST['save'])) 
+         {
+            $mb->addmembre($membre);
+            $mb->affiche();
+         }
+          ///////////////////////// Modifier un membre ///////////////////////////////////////////////
+         if (isset($_POST['update'])) 
+         {
+             $mb->update($_POST['telnum'],$membre);
+             $mb->affiche();   
+         }
+        
+        //////////////////////supprimer un membre//////////////////////////////////////////////////////
+
+     if (isset($_GET['id'])And isset($_GET['nom']) And $_GET['nom']=='delete') 
+      {
+         $mb->deletemb($_GET['id']);
+         $mb->affiche();
+      }
+
+      if (!isset($_POST['save']) And !isset($_POST['update']) And !isset($_GET['id']) And !isset($_POST['search'])) 
+      {
+        $mb->affiche(); 
+      }
+        if (isset($_POST['search']) And isset($_POST['recherche']) And !empty($_POST['recherche'])) 
+        {
+          $mb->selection( $_POST['recherche'] );
+        }
+
+?>
+
+ <a href="Church Management.php">Creer un Membre</a>
+
+</div>
+</div>
+</body>
+</html>
+
+
+

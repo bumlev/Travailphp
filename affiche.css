@@ -1,0 +1,28 @@
+.table1{
+	border:2Px dotted gray;
+	padding:10px;
+	margin:10px;
+    background:white;
+}
+
+tr
+{
+    border:2Px dotted gray;
+	padding:10px;
+	margin:10px;
+    background:white;
+}
+.br
+{
+	border-radius:10px;
+	background: rgba(179,220,237,1);
+	cursor:pointer;
+}
+body
+{
+ background-color:rgba(252,234,187,1);
+}
+.searc
+{
+   margin-left:20px;
+}
